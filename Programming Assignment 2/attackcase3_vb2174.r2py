@@ -1,0 +1,30 @@
+# WRITE FUNCTION
+# New File FUNCTION
+
+# Clean up of existing file
+if "test.txt.a" in listfiles():
+  removefile("test.txt.a")
+if "test.txt.b" in listfiles():
+  removefile("test.txt.b")
+
+# Opening the File Function Call
+myfile=ABopenfile("test.txt",True)  #Create an AB file
+
+# Writing valid data to the file
+myfile.writeat("SRahulGaonkarE",0)
+
+#Closing the file
+myfile.close()
+
+# READ FUNCTION
+# Reopen file again to read
+try:
+ assert(ABopenfile("test.txt",False))
+ myfile=ABopenfile("test.txt",False)
+
+ # Reading the file contents
+ data = myfile.readat(14,0)
+ #Close the file
+ myfile.close()
+except:
+ log("Reopening an existing file is unsuccessfull! Accuracy compromised!!!")

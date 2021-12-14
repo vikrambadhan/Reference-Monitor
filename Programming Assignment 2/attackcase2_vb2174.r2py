@@ -1,0 +1,23 @@
+# We make a file object with a False parameter and then run the read and write commands on it.
+if "testfile.txt.a" in listfiles():
+    removefile("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+    removefile("testfile.txt.b")
+
+try:
+	myfile = ABopenfile("testfile.txt",False)
+except:
+	log("There was an attempt to open a non - existent file\n")
+try:
+	myfile.readat(None,0)
+except:
+	log("There was an attempt to open a non - existent file\n")
+try:
+	myfile.writeat("Sa2aE",0)
+except:
+	log("There was an attempt to open a non - existent file\n")
+try:
+	myfile.close()
+except:
+	log("There was an attempt to open a non - existent file\n")
+
